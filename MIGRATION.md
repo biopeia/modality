@@ -118,9 +118,10 @@ repo as of this PR's base commit.
 ### Historical sensory test modules
 
 Each path below is source evidence, not a mandate to preserve every assertion.
-The current target keeps focused local tests for the extracted operators and
-descriptors; owner-specific tests remain with their owning domain. Blob and
-path-commit data are exact at the pinned snapshot.
+The rows below record historical test provenance and disposition only; they do
+not imply that source tests were copied into Modality. The former target tests
+for the extracted operators and descriptors were removed after ratification.
+Blob and path-commit data are exact at the pinned snapshot.
 
 | Source path | Path commit / blob | Covered symbols / role | Candidate disposition | Consumers / caveat |
 |---|---|---|---|---|
