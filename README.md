@@ -1,13 +1,19 @@
-# Modality contracts
+# Modality
 
-This repository contains a small, reusable contract/library slice for bounded sensory transduction. It is not a semantic authority and does not own Organism interpretation, body state, or environmental phenomena.
+This repository is reserved for reusable, non-authoritative contracts for
+opaque signal/effect transduction. It does not own Organism interpretation,
+body state, environmental phenomena, or persistent modality state.
 
-The initial extraction provides:
+No concrete numeric transduction operators, default modality catalogue, units,
+or temporal model are currently ratified for TARGET. In their absence, callers
+must preserve an opaque signal unchanged rather than assign it an inherited
+numeric meaning. A future operator requires a target consumer and an explicit
+contract for input/output semantics, state ownership, initialization, update
+rule, range, saturation, time basis, determinism, and configuration.
 
-- `TransductionKind` and `apply_transduction`, a bounded deterministic primitive set.
-- `SensoryModality`, a validated capability descriptor and the existing default descriptors.
-
-Dynamic state is not assigned to this library by default. The CURRENT `SensorState` and its temporal/evidence state remain an Organism-owned candidate; episode calibration may be Embodiment-owned. The old `SensorySystem`, plasticity, predictive credit, and interoception code are intentionally deferred because they mix Organism learning/state or depend on host/body contracts.
+Historical `SensorySystem`, plasticity, predictive-credit, and interoception
+code remains outside this package; see [`MIGRATION.md`](MIGRATION.md) for
+source provenance and disposition.
 
 ## Development
 
@@ -18,4 +24,6 @@ python -m pytest
 
 ## Status
 
-This is a reversible copy-first migration slice from the pinned source snapshot. See [`MIGRATION.md`](MIGRATION.md) for exact provenance and dispositions. It does not declare a migration cut-over or final API.
+This is a migration-stage target repository, not a declaration of cut-over or
+compatibility with the historical source. See [`MIGRATION.md`](MIGRATION.md)
+for exact source provenance and current dispositions.
