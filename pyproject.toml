@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "modality"
 version = "0.1.0"
-description = "Bounded transduction contracts and capability descriptors"
+description = "Biopeia opaque signal-transduction contract namespace"
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "Proprietary" }

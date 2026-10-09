@@ -1,11 +1,8 @@
-"""Reusable, non-authoritative modality and transduction contracts."""
+"""Namespace for future Biopeia-owned opaque signal-transduction contracts.
 
-from .modalities import DEFAULT_MODALITIES, SensoryModality
-from .transduction import TransductionKind, apply_transduction
+No concrete operator, numeric interpretation, or modality catalogue is
+currently ratified for TARGET. Callers preserve opaque signals unchanged
+unless a separately reviewed family-specific contract says otherwise.
+"""
 
-__all__ = [
-    "DEFAULT_MODALITIES",
-    "SensoryModality",
-    "TransductionKind",
-    "apply_transduction",
-]
+__all__: tuple[str, ...] = ()
