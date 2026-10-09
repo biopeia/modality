@@ -23,8 +23,29 @@ No source files were removed or changed. The copied modules are unmodified apart
 ## Dynamic state ownership notes
 
 - Transduction function arguments/results are call-local; no persistent modality state is created.
-- The source `SensorState` temporal state (previous input, integrator, outputs, developmental counters) is deferred and is not owned by this repo in this slice. Organism/Embodiment allocation needs explicit contract reconciliation.
-- Any pure scratch state in a future transduction executor should remain implementation-local and non-authoritative unless evidence demonstrates otherwise.
+- Persistent state encountered during migration must be assigned to exactly one of these semantic owners: `ORGANISM_OWNED`, `EMBODIMENT_OWNED`, or `ENVIRONMENT_OWNED`. Pure scratch state that does not survive a call may be `IMPLEMENTATION_EPHEMERAL`.
+- The source `SensorState` temporal state (previous input, integrator, outputs, developmental counters) is deferred; its individual fields must be classified under those allowed ownership labels before any migration. `MODALITY_OWNED` is not an allowed persistent-state label absent an explicit new architecture decision.
+- Any pure scratch state in a future transduction executor should remain `IMPLEMENTATION_EPHEMERAL` and non-authoritative.
+
+## Provisional repository status
+
+The owner has decided to keep Modality as a **provisional independent repository
+during the migration**. This records a packaging/versioning decision only: it
+does not grant semantic authority, persistent-state ownership, or permission to
+move unresolved state into this package. Modality remains a contract/capability
+library; Organism, Embodiment, Environment, and implementation-local code retain
+their respective ownership boundaries.
+
+Revisit whether an independent repository is still justified when any of these
+review triggers occurs:
+
+1. The migration is largely complete.
+2. Evidence shows independent Modality versioning is unnecessary.
+3. Persistent coupling demonstrates that a meaningful boundary does not exist.
+
+Until a new explicit architecture decision changes the rule, persistent state
+may be labeled only `ORGANISM_OWNED`, `EMBODIMENT_OWNED`, `ENVIRONMENT_OWNED`, or
+`IMPLEMENTATION_EPHEMERAL`; do not introduce `MODALITY_OWNED`.
 
 ## Validation
 
@@ -67,6 +88,6 @@ code to this repository. The next code-bearing step is to define and verify the
 necessary Organism/Embodiment/Observation contracts for interoceptive inputs;
 that work must be led at those owner boundaries. Meanwhile, keep this package's
 pure transduction tests and build validation independent. This conclusion is
-limited to the pinned sensory package inventory; it does not prove that
-independent Modality versioning is permanently justified or that the Modality
-repository is complete.
+limited to the pinned sensory package inventory; Modality's independent
+versioning remains provisional under the owner decision above, not a permanent
+topology claim, and this repository is not complete.
