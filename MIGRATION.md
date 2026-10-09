@@ -30,11 +30,14 @@ At initial extraction, these modules were copied unchanged (their target Git blo
 ## Provisional repository status
 
 The owner has decided to keep Modality as a **provisional independent repository
-during the migration**. This records a packaging/versioning decision only: it
-does not grant semantic authority, persistent-state ownership, or permission to
-move unresolved state into this package. Modality remains a contract/capability
-library; Organism, Embodiment, Environment, and implementation-local code retain
-their respective ownership boundaries.
+during the migration**. Removing the unratified legacy operators and catalogue
+did not change this repository-topology decision. Modality is currently a
+reserved boundary for future, explicitly specified transduction capabilities;
+the package has no concrete operator or catalogue and exposes no ratified
+transduction behavior. This packaging/versioning decision grants neither
+semantic authority nor persistent-state ownership and does not permit unresolved
+state to move into this package. Organism, Embodiment, Environment, and
+implementation-local code retain their respective ownership boundaries.
 
 Revisit whether an independent repository is still justified when any of these
 review triggers occurs:
