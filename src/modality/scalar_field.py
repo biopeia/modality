@@ -35,7 +35,7 @@ class DimensionlessScalarFieldIdentityV1:
     MAXIMUM: ClassVar[float] = 1.0
 
     def transduce(self, value: int | float) -> float:
-        """Return an in-range finite value unchanged; never clip or coerce."""
+        """Return an accepted value as ``float``; reject rather than clip."""
 
         if isinstance(value, bool) or not isinstance(value, (int, float)):
             raise ScalarFieldTransductionError("value must be numeric, not boolean")
