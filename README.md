@@ -4,12 +4,15 @@ This repository is reserved for reusable, non-authoritative contracts for
 opaque signal/effect transduction. It does not own Organism interpretation,
 body state, environmental phenomena, or persistent modality state.
 
-No concrete numeric transduction operators, default modality catalogue, units,
-or temporal model are currently ratified for TARGET. In their absence, callers
-must preserve an opaque signal unchanged rather than assign it an inherited
-numeric meaning. A future operator requires a target consumer and an explicit
-contract for input/output semantics, state ownership, initialization, update
-rule, range, saturation, time basis, determinism, and configuration.
+The first-sensor fixture has one explicitly revisioned, stateless identity
+mapping for a dimensionless scalar field in `[0, 1]`. It rejects invalid or
+out-of-range values; it does not clip, add state, or assign semantic meaning.
+This narrow mapping is not a general operator catalogue or universal sensing
+law. The environment phenomenon, receptor and causal provenance remain owned
+by their respective domains. Other numeric transductions still require a
+target consumer and an explicit contract for input/output semantics, state
+ownership, initialization, update rule, range, saturation, time basis,
+determinism, and configuration.
 
 Historical `SensorySystem`, plasticity, predictive-credit, and interoception
 code remains outside this package; see [`MIGRATION.md`](MIGRATION.md) for

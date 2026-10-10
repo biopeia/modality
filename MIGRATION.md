@@ -31,13 +31,14 @@ At initial extraction, these modules were copied unchanged (their target Git blo
 
 The owner has decided to keep Modality as a **provisional independent repository
 during the migration**. Removing the unratified legacy operators and catalogue
-did not change this repository-topology decision. Modality is currently a
-reserved boundary for future, explicitly specified transduction capabilities;
-the package has no concrete operator or catalogue and exposes no ratified
-transduction behavior. This packaging/versioning decision grants neither
-semantic authority nor persistent-state ownership and does not permit unresolved
-state to move into this package. Organism, Embodiment, Environment, and
-implementation-local code retain their respective ownership boundaries.
+did not change this repository-topology decision. Modality is a boundary for
+explicitly specified transduction capabilities; its only ratified concrete
+behavior is the fixture-specific stateless mapping recorded below. It has no
+generic operator catalogue or persistent state. This packaging/versioning
+decision grants neither semantic authority nor persistent-state ownership and
+does not permit unresolved state to move into this package. Organism,
+Embodiment, Environment, and implementation-local code retain their respective
+ownership boundaries.
 
 Revisit whether an independent repository is still justified when any of these
 review triggers occurs:
@@ -53,6 +54,26 @@ may be labeled only `ORGANISM_OWNED`, `EMBODIMENT_OWNED`, `ENVIRONMENT_OWNED`, o
 ## Validation
 
 Validation outcomes are recorded with the migration commit/PR. This initial slice is not a final target API or architectural cut-over.
+
+## First scalar-field transduction fixture — 2026-10-10
+
+The Architecture Owner ratified a bounded first-sensor fixture: Environment
+owns a finite dimensionless scalar field in `[0, 1]`; Embodiment owns the
+stable receptor and its body/episode/morphology binding; World correlates the
+source causal cut; Organism receives an opaque numeric channel; Observation is
+not causal transport. Modality now provides only the revisioned stateless
+identity mapping `DimensionlessScalarFieldIdentityV1` for that fixture. Its
+quantity, unit, range and revision are fixed by the named contract. It rejects
+booleans, non-finite values and values outside `[0, 1]`; it never clips or
+assigns environmental meaning.
+
+This is a new TARGET contract, not a port of the historical `apply_transduction`
+implementation (source SHA `80d372a186513035f85a769db886e505cabba52d`, source
+path `symbiont/src/symbiont/sensory/transduction.py`, disposition `DROP`). The
+function is limited to the first fixture and does not prove sensing efficacy,
+biological equivalence, a complete causal integration path, or checkpoint
+continuity. Stable receptor identity and source/domain provenance are carried
+by the owner-specific integration contracts, not invented or owned here.
 
 ## Complete source snapshot inventory — 2026-10-09
 
@@ -282,12 +303,12 @@ Direct non-test source callers found by the same pinned-source search are invent
 | `symbiont/src/symbiont/core/orchestration/runtime.py` | `0c38091d77ba218bfd4a706659c80f5f6385289d` / `c436087ec1d1f4bfab6bfa7c4e4d801514c69708` | `_parse_running_version`, `_canonical_hash`, `_recorded_session_controls`, `_state_hash_of`, `RuntimeTickResult`, `OrganismDeadError`, `OrganismRuntime` | **DEFER** → `organism/` | Direct runtime/perception consumer. Close against the Organism migration/source disposition and owner tests; no Modality API or persistent state is implied. Reimplement any required behavior under Organism ownership, never copy the source integration wholesale. |
 | `symbiont/src/symbiont/host/percepts.py` | `42ff87fe2102d1a26eb218a5c071ddfb90f42e34` / `78ae657f0be5bd33fea25a3929336ceb30596bbb` | `Percept`, `synthesize_percepts` | **DROP** → No Modality destination | Host-generated percept source has no Modality authority. Any future external-input contract must be newly specified at its owning runtime/application boundary. |
 
-Host providers/telemetry are explicitly excluded from Modality. `vision.py` is explicitly dropped as a legacy apparatus implementation; a future target sensor/apparatus must be newly specified and owned at the appropriate physical/observation boundary. `interoception.py` and the Organism sensory lifecycle remain deferred until their owner contracts/tests close; none may acquire `MODALITY_OWNED` persistence. The former target copies `src/modality/transduction.py` and `src/modality/modalities.py` have been removed. The package currently exposes no concrete operator, descriptor, default catalogue, or persistent state.
+Host providers/telemetry are explicitly excluded from Modality. `vision.py` is explicitly dropped as a legacy apparatus implementation; a future target sensor/apparatus must be newly specified and owned at the appropriate physical/observation boundary. `interoception.py` and the Organism sensory lifecycle remain deferred until their owner contracts/tests close; none may acquire `MODALITY_OWNED` persistence. The former target copies `src/modality/transduction.py` and `src/modality/modalities.py` have been removed. The package exposes no generic operator catalogue, descriptor catalogue, or persistent state; its one fixture-specific scalar mapping is specified below.
 
 ## Architecture Owner ratification — 2026-10-09
 
 The Architecture Owner ratified historical operator behavior as **`DROP unless independently justified`**. This covers difference-with-initial-zero, the copied integration formula, arithmetic-mean mixing, thresholding, identity-as-a-numeric-helper, silent clipping, and alpha/beta/gamma catalogue values and associated capacities/costs. No TARGET consumer independently justified these semantics. The former operator and descriptor tests were removed rather than rewritten as compatibility tests.
 
-The general capability for **opaque signal/effect transduction** remains approved. This does not define numeric operators or assign meaning to opaque values. Until a consumer and separately reviewed operator contract exist, callers preserve opaque signals unchanged. Any future operator must state input/output semantics, state ownership, initialization, update rule, range, saturation, time basis, determinism, and configuration. Silent clipping and undocumented catalogue constants are not permitted.
+The general capability for **opaque signal/effect transduction** remains approved. This does not define a general set of numeric operators or assign meaning to opaque values. Until a consumer and separately reviewed operator contract exist, callers preserve opaque signals unchanged. Any future operator must state input/output semantics, state ownership, initialization, update rule, range, saturation, time basis, determinism, and configuration. Silent clipping and undocumented catalogue constants are not permitted. The ratified fixture-specific mapping below is a new TARGET contract, independently authorized for one bounded consumer; it is not the historical generic identity-as-a-numeric-helper behavior.
 
 This decision supersedes initial copy-first dispositions for the exact source files and blobs recorded above. Historical `symbiont-lab` source and scientific artifacts are not modified by this target disposition.
