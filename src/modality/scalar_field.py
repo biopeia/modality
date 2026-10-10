@@ -34,7 +34,7 @@ class DimensionlessScalarFieldIdentityV1:
     MINIMUM: ClassVar[float] = 0.0
     MAXIMUM: ClassVar[float] = 1.0
 
-    def transduce(self, value: float) -> float:
+    def transduce(self, value: int | float) -> float:
         """Return an in-range finite value unchanged; never clip or coerce."""
 
         if isinstance(value, bool) or not isinstance(value, (int, float)):

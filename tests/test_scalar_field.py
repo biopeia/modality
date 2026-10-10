@@ -17,8 +17,10 @@ def test_first_scalar_field_transduction_is_explicit_identity():
     assert mapping.UNIT == "1"
     assert (mapping.MINIMUM, mapping.MAXIMUM) == (0.0, 1.0)
     assert mapping.transduce(0.0) == 0.0
+    assert mapping.transduce(0) == 0.0
     assert mapping.transduce(0.375) == 0.375
     assert mapping.transduce(1.0) == 1.0
+    assert mapping.transduce(1) == 1.0
 
 
 @pytest.mark.parametrize(
