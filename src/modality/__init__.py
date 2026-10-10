@@ -1,8 +1,8 @@
-"""Namespace for future Biopeia-owned opaque signal-transduction contracts.
+"""Biopeia-owned contracts for explicitly bounded signal transduction."""
 
-No concrete operator, numeric interpretation, or modality catalogue is
-currently ratified for TARGET. Callers preserve opaque signals unchanged
-unless a separately reviewed family-specific contract says otherwise.
-"""
+from .scalar_field import (
+    DimensionlessScalarFieldIdentityV1,
+    ScalarFieldTransductionError,
+)
 
-__all__: tuple[str, ...] = ()
+__all__ = ["DimensionlessScalarFieldIdentityV1", "ScalarFieldTransductionError"]

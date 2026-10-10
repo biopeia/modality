@@ -1,10 +1,10 @@
 # Agent entrypoint — modality
 
-**Status: migration-stage guidance.** This repository is a provisional independent repository and reserved capability seam. Its current package contains no concrete transduction operators or modality catalogue; historical copy-first material is provenance, not current implementation or authorization. This is **not** a declaration of complete functionality or migration cut-over.
+**Status: migration-stage guidance.** This repository is a provisional independent repository and reserved capability seam. Its current package contains one explicitly ratified, fixture-specific stateless identity mapping for the first dimensionless scalar-field sensor, and no generic operator catalogue. Historical copy-first material is provenance, not current implementation or authorization. This is **not** a declaration of complete functionality or migration cut-over.
 
 ## Current ownership boundary
 
-- **Current implementation:** no concrete sensory transduction operators or modality catalogue are implemented or ratified. Do not infer a behavior from historical source material.
+- **Current implementation:** `DimensionlessScalarFieldIdentityV1` validates and forwards only values in the ratified fixture range `[0, 1]`; it rejects invalid values rather than clipping. It assigns no environmental or cognitive meaning. Do not infer additional behavior from historical source material.
 - **Repository role:** provisional independent boundary for future, explicitly specified transduction capabilities; this status does not make Modality a semantic authority or give it ownership of persistent domain state.
 - **Does not own:** learned signal meaning, Organism state or objective Environment truth. Any future persistent modality-related state must be assigned to exactly one approved owner or declared implementation-ephemeral.
 - Read [README.md](README.md) for current implemented scope and [MIGRATION.md](MIGRATION.md) for provenance, excluded work, source SHA, and deferred ownership. These local documents describe the extraction; they do not replace canonical constitutional or scientific authorities.
